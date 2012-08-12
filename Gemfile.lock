@@ -149,12 +149,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  henko!
   fabrication
   faker
   fakeweb
   guard-rspec
   guard-spork
+  henko!
   jquery-rails
   mongoid-rspec
   rspec-rails

@@ -7,16 +7,29 @@ require "change_logger/version"
 Gem::Specification.new do |s|
   s.name        = "change_logger"
   s.version     = ChangeLogger::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ChangeLogger."
-  s.description = "TODO: Description of ChangeLogger."
+  s.authors     = ["Avi Tzurel"]
+  s.email       = ["avi@kensodev.com"]
+  s.homepage    = "http://www.avi.io"
+  s.summary     = "Log your AR model changes into MongoDB"
+  s.description = "Log your AR model changes into MongoDB"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ["lib"]
 
   s.add_dependency "rails", "~> 3.2.6"
-  # s.add_dependency "jquery-rails"
+  s.add_dependency "mongoid", "~> 2.4"
+  s.add_dependency "bson_ext", "~> 1.5"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "fabrication"
+  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "faker"
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'guard-spork'
+  s.add_development_dependency 'guard-rspec'
+  s.add_development_dependency 'mongoid-rspec'
+  s.add_development_dependency 'fakeweb'
+  s.add_development_dependency 'vcr'
 end

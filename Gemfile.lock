@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    change_logger (0.0.1)
+    change_logger (1.0.0)
       bson_ext (~> 1.5)
       mongoid (~> 2.4)
       rails (~> 3.2.6)

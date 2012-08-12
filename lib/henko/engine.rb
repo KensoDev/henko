@@ -1,6 +1,6 @@
-module ChangeLogger
+module Henko
   class Engine < ::Rails::Engine
-    isolate_namespace ChangeLogger
+    isolate_namespace Henko
 
     config.generators do |g|
       g.test_framework :rspec

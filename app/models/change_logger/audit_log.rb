@@ -1,4 +1,4 @@
-module ChangeLogger
+module Henko
   class AuditLog
     include Mongoid::Document
 

@@ -1,10 +1,10 @@
 development:
   host: localhost
-  database: change_logger_development
+  database: henko_development
 
 test:
   host: localhost
-  database: change_logger_test
+  database: henko_test
 
 # set these environment variables on your prod server
 production:

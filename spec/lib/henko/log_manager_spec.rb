@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe ChangeLogger::LogManager do
+describe Henko::LogManager do
 
-  subject { ChangeLogger::LogManager  }
+  subject { Henko::LogManager  }
 
   it "should should have a user_id" do
     subject.user_id = 1
@@ -31,7 +31,7 @@ describe ChangeLogger::LogManager do
     it "should save all data correctly when model is created" do
       subject.audit_model({ record: @user, action: 'create' })
       
-      audit_log = ChangeLogger::AuditLog.first
+      audit_log = Henko::AuditLog.first
       audit_log.action.should == 'create'
       audit_log.user_id.should == "1"
       audit_log.user_ip.should == "127.0.0.1"
@@ -42,7 +42,7 @@ describe ChangeLogger::LogManager do
     it "should save all data correctly when model is updated" do
       @user.first_name = "Avi"
       subject.audit_model({ record: @user, action: 'update' })
-      audit_log = ChangeLogger::AuditLog.last
+      audit_log = Henko::AuditLog.last
       audit_log.data.should include("Avi")
     end
   end

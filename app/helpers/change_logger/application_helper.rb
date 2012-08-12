@@ -1,4 +1,4 @@
-module ChangeLogger
+module Henko
   module ApplicationHelper
   end
 end

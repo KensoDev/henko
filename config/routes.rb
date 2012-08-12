@@ -1,2 +1,2 @@
-ChangeLogger::Engine.routes.draw do
+Henko::Engine.routes.draw do
 end

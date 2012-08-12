@@ -1,4 +1,4 @@
-module ChangeLogger
+module Henko
   class LogManager
     cattr_accessor :user_id, :user_ip, :action_url
     
@@ -9,14 +9,14 @@ module ChangeLogger
       return unless record && options
 
       changes = record.changes
-      current_user_id = ChangeLogger::LogManager.user_id
+      current_user_id = Henko::LogManager.user_id
 
-      audit_log = ChangeLogger::AuditLog.new
+      audit_log = Henko::AuditLog.new
       audit_log.class_name = record.class.name
       audit_log.user_id = current_user_id if current_user_id
       audit_log.action = options[:action]
-      audit_log.action_url = ChangeLogger::LogManager.action_url if ChangeLogger::LogManager.action_url
-      audit_log.user_ip = ChangeLogger::LogManager.user_ip if ChangeLogger::LogManager.user_ip
+      audit_log.action_url = Henko::LogManager.action_url if Henko::LogManager.action_url
+      audit_log.user_ip = Henko::LogManager.user_ip if Henko::LogManager.user_ip
 
       audit_log.data = changes.to_json
 

@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "change_logger/version"
+require "henko/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "change_logger"
-  s.version     = ChangeLogger::VERSION
+  s.name        = "henko"
+  s.version     = Henko::VERSION
   s.authors     = ["Avi Tzurel"]
   s.email       = ["avi@kensodev.com"]
   s.homepage    = "http://www.avi.io"

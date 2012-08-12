@@ -2,6 +2,7 @@ require "henko/engine"
 require 'henko'
 
 module Henko
+
 end
 
 require 'henko/active_record_extensions'

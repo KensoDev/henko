@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    henko (1.0.0)
+    henko (1.1.0)
       bson_ext (~> 1.5)
       mongoid (~> 2.4)
       rails (~> 3.2.6)

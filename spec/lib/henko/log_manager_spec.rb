@@ -25,7 +25,9 @@ describe Henko::LogManager do
       subject.action_url = "/some_action"
       subject.user_ip = "127.0.0.1"
 
-      @user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email)
+      @user = User.create(first_name: Faker::Name.first_name, 
+                          last_name: Faker::Name.last_name, 
+                          email: Faker::Internet.email)
     end
 
     it "should save all data correctly when model is created" do
@@ -36,14 +38,16 @@ describe Henko::LogManager do
       audit_log.user_id.should == "1"
       audit_log.user_ip.should == "127.0.0.1"
       audit_log.class_name.should == 'User'
-      audit_log.data.should include(@user.first_name)
+      audit_log.model_changes.should include(@user.first_name)
+      audit_log.model_snapshot.should_not be_nil
     end
     
     it "should save all data correctly when model is updated" do
       @user.first_name = "Avi"
       subject.audit_model({ record: @user, action: 'update' })
       audit_log = Henko::AuditLog.last
-      audit_log.data.should include("Avi")
+      audit_log.model_changes.should include("Avi")
+      audit_log.model_snapshot.should_not be_nil
     end
   end
 end

@@ -8,7 +8,8 @@ module Henko
     field :class_name, type: String
     field :user_ip, type: String
 
-    field :data, type: String
+    field :model_changes, type: String
+    field :model_snapshot, type: String
 
     index :user_id, sparse: true
     index :action

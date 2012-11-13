@@ -7,6 +7,7 @@ module Henko
     field :user_id, type: String
     field :class_name, type: String
     field :user_ip, type: String
+    field :additional_data, type: String
 
     field :model_changes, type: String
     field :model_snapshot, type: String
@@ -14,5 +15,6 @@ module Henko
     index :user_id, sparse: true
     index :action
     index :class_name
+    index :additional_data
   end
 end

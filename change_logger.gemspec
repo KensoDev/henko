@@ -19,8 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "rails", "~> 3.2.6"
-  s.add_dependency "mongoid", "~> 2.4"
-  s.add_dependency "bson_ext", "~> 1.5"
+  s.add_dependency "mongoid", "~> 3.0.0"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "fabrication"

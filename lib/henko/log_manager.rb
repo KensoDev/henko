@@ -1,7 +1,7 @@
 require 'active_support'
 module Henko
   class LogManager
-    cattr_accessor :user_id, :user_ip, :action_url
+    cattr_accessor :user_id, :user_ip, :action_url, :additional_data
     
     def self.audit_model(options = {})
       record = options[:record]
@@ -18,6 +18,7 @@ module Henko
       audit_log.action     = options[:action]
       audit_log.action_url = Henko::LogManager.action_url if Henko::LogManager.action_url
       audit_log.user_ip    = Henko::LogManager.user_ip if Henko::LogManager.user_ip
+      audit_log.additional_data    = Henko::LogManager.additional_data if Henko::LogManager.additional_data
 
       audit_log.model_changes  = changes.to_json
       audit_log.model_snapshot = record.to_json
